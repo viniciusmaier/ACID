@@ -22,6 +22,8 @@ import { isolamento } from './acid/isolamento.js';
 import { durabilidade } from './acid/durabilidade.js';
 import {consistencia} from './acid/consistencia.js';
 import { atomicidade } from './acid/atomicidade.js'
+import { lock } from './lock/lock.js';
+
 export async function main() {
     // await createTable();
     // await popularClientes();
@@ -31,6 +33,7 @@ export async function main() {
     // await durabilidade();
     // await consistencia();
     // await atomicidade();
+    await lock();
 }
 
 
