@@ -17,6 +17,8 @@ async function transacao1() {
     await new Promise(resolve => setTimeout(resolve, 10000)); // Espera 10s
     await client.query('COMMIT');
     console.log('[T1] Commit realizado.');
+    console.log('[T1] Finalizando transação.');
+    await client.query('END');
   } catch (e) {
     console.error('[T1] Erro:', e.message);
     await client.query('ROLLBACK');
@@ -38,6 +40,7 @@ async function transacao2() {
     console.log('[T2] Conseguiu o lock e continua...');
     await client.query('COMMIT');
     console.log('[T2] Commit realizado.');
+    console.log('[T1] Finalizando transação.');
   } catch (e) {
     console.error('[T2] Erro:', e.message);
     await client.query('ROLLBACK');
