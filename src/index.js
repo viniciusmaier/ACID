@@ -25,8 +25,8 @@ import { atomicidade } from './acid/atomicidade.js'
 import { lock } from './lock/lock.js';
 
 export async function main() {
-    // await createTable();
-    // await popularClientes();
+    await createTable();
+     await popularClientes();
 
 
     // await isolamento();
