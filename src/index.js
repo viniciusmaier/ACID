@@ -30,7 +30,7 @@ export async function main() {
     // await isolamento();
     // await durabilidade();
     // await consistencia();
-    await atomicidade();
+    // await atomicidade();
 }
 
 
