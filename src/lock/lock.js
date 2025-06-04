@@ -21,6 +21,7 @@ async function transacao1() {
     console.error('[T1] Erro:', e.message);
     await client.query('ROLLBACK');
   } finally {
+    console.log('[T1] Liberando conexão.');
     client.release();
   }
 }
@@ -41,6 +42,7 @@ async function transacao2() {
     console.error('[T2] Erro:', e.message);
     await client.query('ROLLBACK');
   } finally {
+    console.log('[T2] Liberando conexão.');
     client.release();
   }
 }
